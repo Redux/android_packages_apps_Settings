@@ -44,7 +44,7 @@ public class DisplaySettings extends PreferenceActivity implements
 
     private static final String KEY_SCREEN_TIMEOUT = "screen_timeout";
     private static final String KEY_ANIMATIONS = "animations";
-    private static final String KEY_ACCELEROMETER = "accelerometer";
+	private static final String KEY_ACCELEROMETER = "accelerometer";
 
     private ListPreference mAnimations;
     private CheckBoxPreference mAccelerometer;
@@ -165,7 +165,8 @@ public class DisplaySettings extends PreferenceActivity implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.ACCELEROMETER_ROTATION,
                     mAccelerometer.isChecked() ? 1 : 0);
-        }
+		}
+		
         return true;
     }
 

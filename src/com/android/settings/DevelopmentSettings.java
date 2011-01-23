@@ -36,12 +36,16 @@ public class DevelopmentSettings extends PreferenceActivity
         implements DialogInterface.OnClickListener, DialogInterface.OnDismissListener {
 
     private static final String ENABLE_ADB = "enable_adb";
+    private static final String ADB_NOTIFY = "adb_notify";
     private static final String KEEP_SCREEN_ON = "keep_screen_on";
     private static final String ALLOW_MOCK_LOCATION = "allow_mock_location";
+    private static final String KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
 
     private CheckBoxPreference mEnableAdb;
+    private CheckBoxPreference mAdbNotify;
     private CheckBoxPreference mKeepScreenOn;
     private CheckBoxPreference mAllowMockLocation;
+    private CheckBoxPreference mKillAppLongpressBack;
 
     // To track whether Yes was clicked in the adb warning dialog
     private boolean mOkClicked;
@@ -55,8 +59,10 @@ public class DevelopmentSettings extends PreferenceActivity
         addPreferencesFromResource(R.xml.development_prefs);
 
         mEnableAdb = (CheckBoxPreference) findPreference(ENABLE_ADB);
+        mAdbNotify = (CheckBoxPreference) findPreference(ADB_NOTIFY);
         mKeepScreenOn = (CheckBoxPreference) findPreference(KEEP_SCREEN_ON);
         mAllowMockLocation = (CheckBoxPreference) findPreference(ALLOW_MOCK_LOCATION);
+        mKillAppLongpressBack = (CheckBoxPreference) findPreference(KILL_APP_LONGPRESS_BACK);
     }
 
     @Override
@@ -65,10 +71,16 @@ public class DevelopmentSettings extends PreferenceActivity
 
         mEnableAdb.setChecked(Settings.Secure.getInt(getContentResolver(),
                 Settings.Secure.ADB_ENABLED, 0) != 0);
+        
+        mAdbNotify.setChecked(Settings.Secure.getInt(getContentResolver(),
+                Settings.Secure.ADB_NOTIFY, 1) != 0);
+                
         mKeepScreenOn.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.STAY_ON_WHILE_PLUGGED_IN, 0) != 0);
         mAllowMockLocation.setChecked(Settings.Secure.getInt(getContentResolver(),
                 Settings.Secure.ALLOW_MOCK_LOCATION, 0) != 0);
+        mKillAppLongpressBack.setChecked(Settings.Secure.getInt(getContentResolver(),
+                Settings.Secure.KILL_APP_LONGPRESS_BACK, 0) != 0);
     }
 
     @Override
@@ -93,6 +105,9 @@ public class DevelopmentSettings extends PreferenceActivity
             } else {
                 Settings.Secure.putInt(getContentResolver(), Settings.Secure.ADB_ENABLED, 0);
             }
+        } else if (preference == mAdbNotify) {
+            Settings.Secure.putInt(getContentResolver(), Settings.Secure.ADB_NOTIFY,
+                    mAdbNotify.isChecked() ? 1 : 0);
         } else if (preference == mKeepScreenOn) {
             Settings.System.putInt(getContentResolver(), Settings.System.STAY_ON_WHILE_PLUGGED_IN, 
                     mKeepScreenOn.isChecked() ? 
@@ -100,6 +115,9 @@ public class DevelopmentSettings extends PreferenceActivity
         } else if (preference == mAllowMockLocation) {
             Settings.Secure.putInt(getContentResolver(), Settings.Secure.ALLOW_MOCK_LOCATION,
                     mAllowMockLocation.isChecked() ? 1 : 0);
+        } else if (preference == mKillAppLongpressBack) {
+            Settings.Secure.putInt(getContentResolver(), Settings.Secure.KILL_APP_LONGPRESS_BACK,
+                    mKillAppLongpressBack.isChecked() ? 1 : 0);
         }
 
         return false;

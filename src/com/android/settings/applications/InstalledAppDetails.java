@@ -222,6 +222,7 @@ public class InstalledAppDetails extends Activity
         boolean dataOnly = false;
         dataOnly = (mPackageInfo == null) && (mAppEntry != null);
         boolean moveDisable = true;
+
         if (dataOnly) {
             mMoveAppButton.setText(R.string.move_app);
         } else if ((mAppEntry.info.flags & ApplicationInfo.FLAG_EXTERNAL_STORAGE) != 0) {

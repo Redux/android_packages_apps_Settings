@@ -33,8 +33,10 @@ import android.util.Log;
 import android.view.MotionEvent;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -69,13 +71,14 @@ public class DeviceInfoSettings extends PreferenceActivity {
         if(tutorials == null || tutorials.isEmpty()) {
             getPreferenceScreen().removePreference(findPreference("system_tutorial"));
         }
-
+		
         setStringSummary("firmware_version", Build.VERSION.RELEASE);
         findPreference("firmware_version").setEnabled(true);
         setValueSummary("baseband_version", "gsm.version.baseband");
         setStringSummary("device_model", Build.MODEL);
         setStringSummary("build_number", Build.DISPLAY);
         findPreference("kernel_version").setSummary(getFormattedKernelVersion());
+        setValueSummary("mod_version", "ro.modversion");
 
         // Remove Safety information preference if PROPERTY_URL_SAFETYLEGAL is not set
         removePreferenceIfPropertyMissing(getPreferenceScreen(), "safetylegal",

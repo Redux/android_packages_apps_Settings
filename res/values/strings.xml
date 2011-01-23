@@ -177,8 +177,6 @@
     <string name="battery_info_health_over_voltage">Over voltage</string>
     <!-- Battery Info screen. Value for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
     <string name="battery_info_health_unspecified_failure">Unknown error</string>
-    <!-- Battery Info screen. Value for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
-    <string name="battery_info_health_cold">Cold</string>
 
     <!-- Used as setting title (for checkbox) on second screen after selecting Bluetooth settings -->
     <string name="bluetooth">Bluetooth</string>
@@ -451,6 +449,8 @@
     <string name="device_info_label">Device info</string>
     <!-- The title of the activity to see battery info. -->
     <string name="battery_info_label">Battery info</string>
+    <!-- The title of the activity to see battery history. -->
+    <string name="battery_history_label">Battery history</string>
     <!-- The title of the activity to adjust display settings -->
     <string name="display_label">Display</string>
     <!-- The title of the activity to see phone info -->
@@ -1064,6 +1064,18 @@
     <string name="notification_pulse_title">Pulse notification light</string>
     <!-- Sound settings screen, notification light repeat pulsing summary -->
     <string name="notification_pulse_summary">Pulse trackball light repeatedly for new notifications</string>
+    <!-- Display settings screen, notification light repeat blinking title -->
+    <string name="notification_blink_title">Blink notification light</string>
+    <!-- Display settings screen, notification light repeat blinking summary -->
+    <string name="notification_blink_summary">Blink the green notifications repeatedly</string>
+    <!-- Display settings screen, notification light always on title -->
+    <string name="notification_always_on_title">Always enable notification light</string>
+    <!-- Display settings screen, notification light always on summary -->
+    <string name="notification_always_on_summary">Enable notification light while screen is on</string>
+    <!-- Display settings screen, notification light while charging title -->
+    <string name="notification_charging_title">Charging light</string>
+    <!-- Display settings screen, notification light while charging summary -->
+    <string name="notification_charging_summary">Enable the amber light while charging</string>
     <!-- Sound settings screen, the title of the volume bar to adjust the incoming call volume -->
     <string name="incoming_call_volume_title">Ringtone</string>
     <!-- Sound settings screen, the title of the volume bar to adjust the notification volume -->
@@ -1222,6 +1234,10 @@
     <string name="system_update_settings_list_item_summary">""</string>
 
     <!-- About phone screen, status item label -->
+    <string name="cpu_info">CPU info</string>
+    <!-- About phone screen, status item label -->
+    <string name="mem_info">Mem info (avail/total)</string>
+    <!-- About phone screen, status item label -->
     <string name="firmware_version">Android version</string>
     <!-- About phone screen, status item label-->
     <string name="model_number">Model number</string>
@@ -1231,6 +1247,9 @@
     <string name="kernel_version">Kernel version</string>
     <!-- About phone screen,  setting option name-->
     <string name="build_number">Build number</string>
+    <!-- About phone screen,  setting option name-->
+    <string name="mod_version">Mod version</string>
+    <string name="mod_version_default">Unknown</string>
 
     <!-- About phone screen, show when a value of some status item is unavailable. -->
     <string name="device_info_not_available">Not available</string>
@@ -1926,7 +1945,7 @@ found in the list of installed applications.</string>
     <string name="runningservicedetails_stop_dlg_text">Are you sure you want to stop this system service? If you do, some
         features of your phone may stop working correctly until you power it off
         and then on again.</string>
-    
+
     <!-- Language Settings --> <skip />
     <!-- Title of setting on main settings screen.  This item will take the user to the screen to tweak settings realted to locale and text -->
     <string name="language_settings">Language &amp; keyboard</string>
@@ -1992,6 +2011,8 @@ found in the list of installed applications.</string>
     <string name="testing_phone_info">Phone information</string>
     <!-- In the Testing screen. The item title of the activity that shows a bunch of battery-related information.  -->
     <string name="testing_battery_info">Battery information</string>
+    <!-- In the Testing screen. The item title of the activity that shows a bunch of historical battery-related information. -->
+    <string name="testing_battery_history">Battery history</string>
     <!-- Do not translate. In the Testing screen. The item title of the activity that shows a bunch of SIM-related operations.  -->
     <string name="testing_sim_toolkit">SIM toolkit</string>
 
@@ -2038,6 +2059,10 @@ found in the list of installed applications.</string>
     <string name="enable_adb">USB debugging</string>
     <!-- Setting checkbox summary for Whether to enable USB debugging support on the phone -->
     <string name="enable_adb_summary">Debug mode when USB is connected</string>
+    <!-- Setting checkbox title for displaying USB debugging notification -->
+    <string name="adb_notify">USB debugging notify</string>
+    <!-- Setting checkbox summary for displaying USB debugging notification -->
+    <string name="adb_notify_summary">Display a notification when USB debugging is connected</string>
     <!-- Setting Checkbox title whether to keep the screen on when plugged in to a power source -->
     <string name="keep_screen_on">Stay awake</string>
     <!-- setting Checkbox summary whether to keep the screen on when plugged in  -->
@@ -2046,6 +2071,10 @@ found in the list of installed applications.</string>
     <string name="allow_mock_location">Allow mock locations</string>
     <!-- setting Checkbox summary whether to allow mock locations  -->
     <string name="allow_mock_location_summary">Allow mock locations</string>
+    <!-- Setting checkbox title whether to allow killing foreground app by longpress on BACK. -->
+    <string name="kill_app_longpress_back">Stop app via long-press</string>
+    <!-- Setting checkbox summary whether to allow killing foreground app by longpress on BACK. -->
+    <string name="kill_app_longpress_back_summary">Long-pressing the BACK button will kill the foreground application.</string>
     <!-- Title of warning dialog about the implications of enabling USB debugging -->
     <string name="adb_warning_title">Allow USB debugging?</string>
     <!-- Warning text to user about the implications of enabling USB debugging -->
@@ -2061,6 +2090,39 @@ found in the list of installed applications.</string>
          the final name for Gadgets/Widgets, so please translate both for now. -->
     <string name="widget_picker_title">Choose widget</string>
 
+<!-- Used to display "Details for UID 1234" in BatteryHistory -->
+    <string name="battery_history_details_for">Details for UID <xliff:g id="number" example="1234">%d</xliff:g></string>
+
+    <!-- Used to name a set of apps that share a user id in BatteryHistory -->
+    <string name="battery_history_uid">UID <xliff:g id="user_id">%1$d</xliff:g></string>
+
+    <!-- Used as a title for the network usage details screen in BatteryHistory -->
+    <string name="battery_history_network_usage">Network usage details for <xliff:g id="app_name">%1$s</xliff:g>:</string>
+
+    <!-- Used to show the number of bytes received by an app over the network in BatteryHistory -->
+    <string name="battery_history_bytes_received">Bytes received: <xliff:g id="bytes">%1$d</xliff:g></string>
+
+    <!-- Used to show the number of bytes sent by an app over the network in BatteryHistory -->
+    <string name="battery_history_bytes_sent">Bytes sent: <xliff:g id="bytes">%1$d</xliff:g></string>
+
+    <!-- Used to show the number of bytes sent and received by an app over the network in BatteryHistory -->
+    <string name="battery_history_bytes_total">Total bytes: <xliff:g id="bytes">%1$d</xliff:g></string>
+
+    <!-- Used as a title for the cpu usage details screen in BatteryHistory -->
+    <string name="battery_history_cpu_usage">CPU usage details for <xliff:g id="app_name">%1$s</xliff:g>:</string>
+
+    <!-- Used to show the time spent in user code for a given app in BatteryHistory -->
+    <string name="battery_history_user_time">User time: </string>
+
+    <!-- Used to show the time spent in system code for a given app in BatteryHistory -->
+    <string name="battery_history_system_time">System time: </string>
+
+    <!-- Used to show the time spent in user or system code for a given app in BatteryHistory -->
+    <string name="battery_history_total_time">Total time: </string>
+
+    <!-- Used to show the number of times an app has been started in BatteryHistory -->
+    <string name="battery_history_starts">Starts: <xliff:g id="starts">%1$d</xliff:g></string>
+
     <!-- Used to show an amount of time in the form "d days, h hours, m minutes, s seconds" in BatteryHistory -->
     <string name="battery_history_days"><xliff:g id="days">%1$d</xliff:g>d <xliff:g id="hours">%2$d</xliff:g>h <xliff:g id="minutes">%3$d</xliff:g>m <xliff:g id="seconds">%4$d</xliff:g>s</string>
 
@@ -2072,6 +2134,51 @@ found in the list of installed applications.</string>
 
     <!-- Used to show an amount of time in the form "s seconds" in BatteryHistory -->
     <string name="battery_history_seconds"><xliff:g id="seconds">%1$d</xliff:g>s</string>
+
+    <!-- Used to head a list of packages that share a given user id BatteryHistory -->
+    <string name="battery_history_packages_sharing_this_uid">Packages sharing this UID:</string>
+
+    <!-- Used when no battery data available in BatteryHistory -->
+    <string name="battery_history_no_data">No battery usage data available</string>
+
+    <!-- Used for Sensor detail screen in BatteryHistory -->
+    <string name="battery_history_sensor">Sensor:</string>
+
+    <!-- Used for Wakelock detail screen in BatteryHistory -->
+    <string name="battery_history_wakelock">Partial Wakelock:</string>
+
+    <!-- Used for Sensor detail screen in BatteryHistory -->
+    <string name="battery_history_used_by_packages">Sensor used by packages:</string>
+
+    <!-- Used for Sensor detail screen in BatteryHistory -->
+    <string name="battery_history_sensor_usage">Used <xliff:g id="count">%1$d</xliff:g> times by <xliff:g id="package">%2$s</xliff:g></string>
+
+    <!-- Used for Sensor detail screen in BatteryHistory -->
+    <string name="battery_history_sensor_usage_multi">Used <xliff:g id="count">%1$d</xliff:g> times by one of:</string>
+
+    <!-- Used for label of awake bar in BatteryHistory -->
+    <string name="battery_history_awake_label">Running</string>
+
+    <!-- Used for label of screen on bar in BatteryHistory -->
+    <string name="battery_history_screen_on_label">Screen on</string>
+
+    <!-- Used for label of phone on bar in BatteryHistory -->
+    <string name="battery_history_phone_on_label">Phone on</string>
+
+    <!-- Used for awake time message in BatteryHistory -->
+    <string name="battery_history_awake">Time spent without sleeping:</string>
+
+    <!-- Used for Screen on time message in BatteryHistory -->
+    <string name="battery_history_screen_on">Time spent with screen on:</string>
+
+    <!-- Used for Phone on time message in BatteryHistory -->
+    <string name="battery_history_phone_on">Time spent with phone on:</string>
+
+    <!-- Used for Screen on time message in BatteryHistory -->
+    <string name="battery_history_screen_on_battery">On battery:</string>
+
+    <!-- XXX remove? Used for Screen on time message in BatteryHistory -->
+    <string name="battery_history_screen_on_plugged">Plugged in:</string>
     
     <!-- XXX remove? Strings used for displaying usage statistics -->
     <string name="usage_stats_label">Usage statistics</string>
@@ -2471,6 +2578,26 @@ found in the list of installed applications.</string>
     <string name="vpn_a_l2tp_secret">an L2TP secret</string>
     <string name="vpn_pptp_encryption_title">encryption</string>
     <string name="vpn_pptp_encryption">PPTP encryption</string>
+    <string name="vpn_openvpn_port">Server port</string>
+    <string name="vpn_openvpn_protocol">Protocol to use</string>
+    <string name="vpn_openvpn_device">Device to use</string>
+    <string name="vpn_openvpn_userauth">User authentication</string>
+    <string name="vpn_openvpn_userauth_summary">Set if additional username/password authentication needs to be used</string>
+    <string name="vpn_openvpn_advanced_titlebar">Advanced Openvpn Settings</string>
+    <string name="vpn_openvpn_comp_lzo">LZO compression</string>
+    <string name="vpn_openvpn_comp_lzo_summary">Force LZO compression to be set to on</string>
+    <string name="vpn_openvpn_redirect_gateway_title">Redirect gateway</string>
+    <string name="vpn_openvpn_redirect_gateway_summary">Force all traffic to berouted thru the VPN tunnel</string>
+    <string name="vpn_openvpn_set_addr">Remote Sets Addresses</string>
+    <string name="vpn_openvpn_set_addr_summary">Uncheck to set tunnel addresses manually</string>
+    <string name="vpn_openvpn_set_local_addr">Local IP Address</string>
+    <string name="vpn_openvpn_set_remote_addr">Remote IP Address</string>
+    <string name="vpn_openvpn_set_cipher">Cipher algorithm</string>
+    <string name="vpn_openvpn_set_cipher_message">Leave empty to use default cipher</string>
+    <string name="vpn_openvpn_set_keysize">Size of cipher key</string>
+    <string name="vpn_openvpn_set_keysize_message">Leave empty to use cipher-specific default</string>
+    <string name="vpn_openvpn_set_extra">Extra arguments</string>
+    <string name="vpn_openvpn_set_extra_message">Enter the extra command line arguments</string>
 
     <!-- Preference title -->
     <string name="vpn_ipsec_presharedkey_title">Set IPSec pre-shared key</string>
@@ -2649,4 +2776,144 @@ found in the list of installed applications.</string>
     <string name="sound_category_calls_title">Incoming calls</string>
     <string name="sound_category_notification_title">Notifications</string>
     <string name="sound_category_feedback_title">Feedback</string>
+
+    <string name="launcher_settings_title">ADWLauncher</string>
+
+    <string name="possibleButtons">Possible Buttons</string>
+    <string name="toggleWifi">Wi-Fi</string>
+    <string name="toggleWifiAp">Portable Wi-Fi hotspot</string>
+    <string name="toggleBluetooth">Bluetooth</string>
+    <string name="toggleGPS">GPS</string>
+    <string name="toggleData">Mobile Data</string>
+    <string name="toggleSync">Data Sync</string>
+    <string name="toggle2g3g">2G/3G</string>
+    <string name="toggleSound">Ring Mode</string>
+    <string name="toggleBrightness">Brightness</string>
+    <string name="toggleAutoRotate">Orientation</string>
+    <string name="toggleScreenTimeout">Screen Timeout</string>
+    <string name="toggleAirplane">Airplane</string>
+    <string name="toggleFlashlight">Flashlight</string>
+    <string name="toggleLockScreen">Lock Screen</string>
+
+    <string name="toggleWifiDescription">Enable/disable Wifi</string>
+    <string name="toggleWifiApDescription">Enable/disable the portable Wi-Fi hotspot</string>
+    <string name="toggleBluetoothDescription">Enable/disable Bluetooth</string>
+    <string name="toggleGPSDescription">Enable/disable GPS</string>
+    <string name="toggleDataDescription">Enable/disable mobile data</string>
+    <string name="toggleSyncDescription">Enable/disable data sync</string>
+    <string name="toggle2g3gDescription">Switch between 2G and 3G</string>
+    <string name="toggleSoundDescription">Switch between ring and vibrate only</string>
+    <string name="toggleBrightnessDescription">Switch between brightness levels</string>
+    <string name="toggleAutoRotateDescription">Enable/disable orientation sensor</string>
+    <string name="toggleScreenTimeoutDescription">Set diferent screen timeouts</string>
+    <string name="toggleAirplaneDescription">Enable/disable airplane mode</string>
+    <string name="toggleFlashlightDescription">Enable/disable flashlight mode</string>
+    <string name="toggleLockScreenDescription">Enable/disable lock screen</string>
+
+
+    <string name="widgetSettings">Widget Instance Settings</string>
+    <string name="wifiSettings">Wifi Events settings</string>
+    <string name="dataSettings">Data Events settings</string>
+    <string name="powerSettings">Power Events settings</string>
+
+    <string name="generalSettings">General Settings</string>
+
+    <string name="autoDisable3G">Data disables 3G</string>
+    <string name="autoEnable3G">Data enables 3G</string>
+    <string name="autoDisable3GWithWifi">Wifi disables 3G</string>
+    <string name="autoEnable3GWithWifi">Wifi enables 3G</string>
+    <string name="useRoundCorners">Round corners</string>
+    <string name="useVertical">Vertical Layout</string>
+    <string name="useTransparent">Transparent Widget</string>
+    <string name="autoEnableSyncWithWifi">Wifi enables Sync</string>
+    <string name="autoDisableSyncWithWifi">Wifi disables Sync</string>
+    <string name="ringModeVibrateAsOn">Vibrate as ON</string>
+    <string name="monitorDataRoaming">Monitor Data Roaming</string>
+    <string name="autoEnableBluetoothWithPower">Ext. PWR enables Bluetooth</string>
+    <string name="autoDisableBluetoothWithPower">Ext. PWD disables Bluetooth</string>
+    <string name="autoEnableWifiWithPower">Ext. PWD enables Wifi</string>
+    <string name="autoDisableWifiWithPower">Ext. PWD disables Wifi</string>
+
+    <string name="autoDisable3GDescription">2G when mobile data is disabled</string>
+    <string name="autoEnable3GDescription">3G when mobile data is enabled</string>
+    <string name="autoDisable3GWithWifiDescription">2G when Wifi is enabled</string>
+    <string name="autoEnable3GWithWifiDescription">3G when Wifi is disbled</string>
+    <string name="useRoundCornersDescription">Use round widget icons</string>
+    <string name="useTransparentDescription">No widget background</string>
+    <string name="useVerticalDescription">Show with vertical orientation</string>
+    <string name="autoEnableSyncWithWifiDescription">Enable sync when WIFI is enabled</string>
+    <string name="autoDisableSyncWithWifiDescription">Disable sync when WIFI is disabled</string>
+    <string name="ringModeVibrateAsOnDescription">Show Sound as on when vibrate only</string>
+    <string name="monitorDataRoamingDescription">Data status red if data roaming is enabled</string>
+    <string name="autoEnableBluetoothWithPowerDescription">Bluetooth enabled when Power connected</string>
+    <string name="autoDisableBluetoothWithPowerDescription">Bluetooth disabled when Power disconnected</string>
+    <string name="autoEnableWifiWithPowerDescription">Wifi enabled when Power connected</string>
+    <string name="autoDisableWifiWithPowerDescription">Wifi disabled when Power disconnected</string>
+
+    <string name="networkModeSpinner">Choose Network Modes</string>
+    <string name="brightnessSpinner">Choose Brightness levels</string>
+    <string name="ringModeSpinner">Choose Ring modes</string>
+    <string name="screenTimeoutSpinner">Choose Screen Timeout</string>
+    <string name="backgroundImageSpinner">Choose background</string>
+
+    <string name="notConfigured">Not configured. Please add again</string>
+
+    <string name="ok">Ok</string>
+
+
+    <!-- Widget Picker -->
+    <string name="widget_count">(%d widgets)</string>
+    
+    <!-- Redux settings strings -->
+    <string name="interface_settings">Interface settings</string>
+    <string name="interface_settings_title">Interface</string>
+    
+    <string name="statusbar_options">Statusbar options</string>
+    <string name="battery_icon_style_title">Battery icon style</string>
+    
+    <string name="lockscreen_options">Lockscreen options</string>
+    <string name="lockscreen_music_controls">Lockscreen music controls</string>
+    <string name="lockscreen_always_music_controls">Persistent music controls</string>
+    <string name="lockscreen_always_music_controls_summary">Display music controls even if no music is playing</string>
+    <string name="trackball_wake_screen">Trackpad wake</string>
+    <string name="trackball_wake_screen_summary">Turn on the screen by pressing the optical joystick</string>
+    
+    <string name="notification_power_widget">Notification power widget</string>
+    <string name="expanded_power_widget">Notification power widget</string>
+    <string name="expanded_power_widget_summary">Use the expanded views power widget</string>
+    <string name="expanded_hide_onchange">Hide on change</string>
+    <string name="expanded_hide_onchange_summary">Hide the notification pulldown after toggling a widget button</string>
+    <string name="power_picker">Widget buttons</string>
+    <string name="power_picker_summary">Pick your widget buttons</string>
+    
+    <!-- Power picker -->
+    <string name="title_widget_buttons">Expanded View Widget</string>
+    <string name="title_toggle_wifi">Toggle Wifi</string>
+    <string name="title_toggle_bluetooth">Toggle Bluetooth</string>
+    <string name="title_toggle_gps">Toggle GPS</string>
+    <string name="title_toggle_sound">Toggle Sound</string>
+    <string name="title_toggle_brightness">Toggle Brightness</string>
+    <string name="title_toggle_sync">Toggle Sync</string>
+    <string name="title_toggle_wifiap">Toggle Wifi AP</string>
+    <string name="title_toggle_screentimeout">Toggle Screentimeout</string>
+    <string name="title_toggle_mobiledata">Toggle Mobiledata</string>
+    <string name="title_toggle_lockscreen">Toggle Lockscreen</string>
+    <string name="title_toggle_networkmode">Toggle 2G/3G</string>
+    <string name="title_toggle_autorotate">Toggle Orientation</string>
+    <string name="title_toggle_airplane">Toggle Airplane mode</string>
+    <string name="title_toggle_flashlight">Toggle LED flashlight</string>
+    <string name="title_toggle_sleep">Go to sleep</string>
+    <string name="title_button_modes">Button modes</string>
+    <string name="pref_brightness_mode_title">Brightness modes</string>
+    <string name="pref_brightness_mode_summary">Choose how the brightness button changes modes</string>
+    <string name="pref_network_mode_title">Network modes</string>
+    <string name="pref_network_mode_summary">Choose how the NetworkMode button changes modes</string>
+    <string name="pref_screentimeout_mode_title">Screentimeout modes</string>
+    <string name="pref_screentimeout_mode_summary">Choose how the Screentimeout button changes modes</string>
+    <string name="pref_ring_mode_title">Sound modes</string>
+    <string name="pref_ring_mode_summary">Choose how the sound button changes modes</string>
+    <string name="pref_flash_mode_title">Flash mode</string>
+    <string name="pref_flash_mode_summary">Choose High / Death Ray(Evo)</string>
+    <string name="widget_max_buttons">6 is the max amount of buttons.</string>
+    
 </resources>

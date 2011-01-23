@@ -57,8 +57,6 @@ public class LanguageSettings extends PreferenceActivity {
     
     private String mLastInputMethodId;
     private String mLastTickedInputMethodId;
-
-    private AlertDialog mDialog = null;
     
     static public String getInputMethodIdFromKey(String key) {
         return key;
@@ -260,35 +258,29 @@ public class LanguageSettings extends PreferenceActivity {
                 if (selImi == null) {
                     return super.onPreferenceTreeClick(preferenceScreen, preference);
                 }
-                if (mDialog == null) {
-                    mDialog = (new AlertDialog.Builder(this))
-                            .setTitle(android.R.string.dialog_alert_title)
-                            .setIcon(android.R.drawable.ic_dialog_alert)
-                            .setCancelable(true)
-                            .setPositiveButton(android.R.string.ok,
-                                    new DialogInterface.OnClickListener() {
-                                        public void onClick(DialogInterface dialog, int which) {
-                                            chkPref.setChecked(true);
-                                            mLastTickedInputMethodId = id;
-                                        }
-
-                            })
-                            .setNegativeButton(android.R.string.cancel,
-                                    new DialogInterface.OnClickListener() {
-                                        public void onClick(DialogInterface dialog, int which) {
-                                        }
-
-                            })
-                            .create();
-                } else {
-                    if (mDialog.isShowing()) {
-                        mDialog.dismiss();
-                    }
-                }
-                mDialog.setMessage(getString(R.string.ime_security_warning,
-                        selImi.getServiceInfo().applicationInfo.loadLabel(
-                                getPackageManager())));
-                mDialog.show();
+                AlertDialog d = (new AlertDialog.Builder(this))
+                        .setTitle(android.R.string.dialog_alert_title)
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setMessage(getString(R.string.ime_security_warning,
+                                selImi.getServiceInfo().applicationInfo.loadLabel(
+                                        getPackageManager())))
+                        .setCancelable(true)
+                        .setPositiveButton(android.R.string.ok,
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        chkPref.setChecked(true);
+                                        mLastTickedInputMethodId = id;
+                                    }
+                            
+                        })
+                        .setNegativeButton(android.R.string.cancel,
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                    }
+                            
+                        })
+                        .create();
+                d.show();
             } else if (id.equals(mLastTickedInputMethodId)) {
                 mLastTickedInputMethodId = null;
             }
@@ -311,15 +303,6 @@ public class LanguageSettings extends PreferenceActivity {
             }
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if (mDialog != null) {
-            mDialog.dismiss();
-            mDialog = null;
-        }
     }
 
 }
