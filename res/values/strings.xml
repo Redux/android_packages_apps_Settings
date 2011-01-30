@@ -2864,7 +2864,8 @@ found in the list of installed applications.</string>
     <!-- Widget Picker -->
     <string name="widget_count">(%d widgets)</string>
     
-    <!-- Redux settings strings -->
+    <!-- Being Redux specific strings -->
+    <!-- Interface settings -->
     <string name="interface_settings">Interface settings</string>
     <string name="interface_settings_title">Interface</string>
     
@@ -2885,6 +2886,23 @@ found in the list of installed applications.</string>
     <string name="expanded_hide_onchange_summary">Hide the notification pulldown after toggling a widget button</string>
     <string name="power_picker">Widget buttons</string>
     <string name="power_picker_summary">Pick your widget buttons</string>
+    
+    <!-- CPU settings -->
+    <string name="cpu_settings">CPU settings</string>
+    <string name="cpu_settings_title">CPU settings</string>
+    
+    <string name="screenstate_scaling">Screenstate scaling</string>
+    <string name="screenstate_scaling_summary">Lower CPU frequency when screen is turned off</string>
+    <string name="available_governors">Available governors</string>
+    <string name="cpu_governor">Governor</string>
+    <string name="min_freq">Minimum frequency</string>
+    <string name="max_freq">Maximum frequency</string>
+    <string name="set_on_boot">Set on boot</string>
+    <string name="set_on_boot_summary">Apply changes at startup</string>
+    <!-- Formatted strings, used to set summaries in CPU settings -->
+    <string name="cpu_governors_list">Frequency scaling governor: %S</string>
+    <string name="cpu_min_freq">Minimum CPU frequency: %S</string>
+    <string name="cpu_max_freq">Maximum CPU frequency: %S</string>
     
     <!-- Power picker -->
     <string name="title_widget_buttons">Expanded View Widget</string>
@@ -2915,5 +2933,5 @@ found in the list of installed applications.</string>
     <string name="pref_flash_mode_title">Flash mode</string>
     <string name="pref_flash_mode_summary">Choose High / Death Ray(Evo)</string>
     <string name="widget_max_buttons">6 is the max amount of buttons.</string>
-    
+    <!-- End Redux specific strings -->
 </resources>

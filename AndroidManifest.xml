@@ -840,6 +840,21 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        
+        <!-- CPU settings -->
+        <activity android:name=".CPUSettings">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <!-- Service used to apply CPU settings -->
+        <service android:enabled="true" android:name=".cpu.CPUService" />
+        <!-- Receiver used to call CPUService -->
+        <receiver android:name=".cpu.CPUReceiver" android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
 
   		<activity
       		android:name="com.android.settings.widget.FlashlightActivity"
