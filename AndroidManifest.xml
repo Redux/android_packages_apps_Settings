@@ -841,19 +841,6 @@
             </intent-filter>
         </activity>
         
-        <activity android:name=".BacklightActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-            </intent-filter>
-        </activity>
-        
-        <activity android:name=".LightLevelsActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-            </intent-filter>
-        </activity>
-        
         <!-- CPU settings -->
         <activity android:name=".CPUSettings">
             <intent-filter>

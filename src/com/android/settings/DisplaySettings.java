@@ -167,7 +167,7 @@ public class DisplaySettings extends PreferenceActivity implements
                     mAccelerometer.isChecked() ? 1 : 0);
 		}
 		
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
+        return true;
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
