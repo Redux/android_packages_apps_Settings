@@ -29,6 +29,7 @@ import android.content.pm.PackageManager;
 
 public class Settings extends PreferenceActivity {
 
+	private static final String KEY_PARENT = "parent";
     private static final String KEY_CALL_SETTINGS = "call_settings";
     private static final String KEY_SYNC_SETTINGS = "sync_settings";
     private static final String KEY_DOCK_SETTINGS = "dock_settings";
@@ -41,7 +42,8 @@ public class Settings extends PreferenceActivity {
 
         int activePhoneType = TelephonyManager.getDefault().getPhoneType();
 
-        Utils.updatePreferenceToSpecificActivityOrRemove(this, parent, KEY_SYNC_SETTINGS, 0)
+		PreferenceGroup parent = (PreferenceGroup) findPreference(KEY_PARENT);
+        Utils.updatePreferenceToSpecificActivityOrRemove(this, parent, KEY_SYNC_SETTINGS, 0);
 
         Preference dockSettings = parent.findPreference(KEY_DOCK_SETTINGS);
         if (getResources().getBoolean(R.bool.has_dock_settings) == false && dockSettings != null) {
