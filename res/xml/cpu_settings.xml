@@ -22,6 +22,7 @@
             android:key="screenstate_scaling"
             android:title="@string/screenstate_scaling"
             android:summary="@string/screenstate_scaling_summary"
+            android:defaultValue="true"
             android:persistent="true" />
             
         <ListPreference
