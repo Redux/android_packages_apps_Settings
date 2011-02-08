@@ -69,9 +69,17 @@
                 <intent
                     android:action="android.intent.action.MAIN"
                     android:targetPackage="com.android.settings"
-                    android:targetClass="com.android.settings.WidgetActivity" />
+                    android:targetClass="com.android.settings.PowerWidgetActivity" />
             </PreferenceScreen>
-                
+            
+            <PreferenceScreen
+                android:key="widget_order"
+                android:title="@string/title_widget_order" android:summary="@string/summary_widget_order">
+                <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.android.settings"
+                    android:targetClass="com.android.settings.PowerWidgetOrderActivity" />
+            </PreferenceScreen>
+            
         </PreferenceCategory>
                 
 </PreferenceScreen>

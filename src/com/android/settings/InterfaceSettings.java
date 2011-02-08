@@ -43,6 +43,7 @@ public class InterfaceSettings extends PreferenceActivity implements
 	private static final String EXP_WIDGET = "expanded_power_widget";
 	private static final String EXP_HIDE_ONCHANGE = "expanded_hide_onchange";
 	private static final String POWER_PICKER = "power_picker";
+	private static final String POWER_ORDER = "widget_order";
 
 	private ListPreference mBatteryToggle;
 	private CheckBoxPreference mMusicControls;
@@ -51,6 +52,7 @@ public class InterfaceSettings extends PreferenceActivity implements
 	private CheckBoxPreference mExpWidget;
 	private CheckBoxPreference mExpHideOnchange;
 	private PreferenceScreen mPowerPicker;
+	private PreferenceScreen mPowerOrder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +84,7 @@ public class InterfaceSettings extends PreferenceActivity implements
 									Settings.System.EXPANDED_HIDE_ONCHANGE, 0) == 1);
 		
 		mPowerPicker = (PreferenceScreen)findPreference(POWER_PICKER);
+		mPowerOrder = (PreferenceScreen)findPreference(POWER_ORDER);
     }
 
     @Override
@@ -113,6 +116,8 @@ public class InterfaceSettings extends PreferenceActivity implements
 					mExpHideOnchange.isChecked() ? 1 : 0);
         } else if (preference == mPowerPicker) {
 			startActivity(mPowerPicker.getIntent());
+		} else if (preference == mPowerOrder) {
+			startActivity(mPowerOrder.getIntent());
 		}
 		
         return true;
