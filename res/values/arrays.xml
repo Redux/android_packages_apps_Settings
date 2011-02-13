@@ -418,7 +418,7 @@
         <item>notsilent</item>
     </string-array>
     
-    <string-array name="brightnessWidget" translatable="false" formatted="false">
+    <string-array name="brightnessWidget" formatted="false" translatable="false">
         <item>Auto/Dim/40%%/100%%</item>
         <item>Auto/Dim/25%%/50%%/75%%/100%%</item>
         <item>Auto/25%%/100%%</item>
@@ -577,7 +577,7 @@
     </string-array>
     
    <string-array name="entries_brightness_widget" translatable="false">
-        <item>Auto/Dim/40%%/100%%</item>
+        <item formatted="false">Auto/Dim/40%/100%</item>
         <item>Auto/Dim/25%%/75%%/100%%</item>
         <item>Auto/25%%/100%%</item>
         <item>Dim/100%%</item>
@@ -647,6 +647,18 @@
     <string-array name="battery_icon_style_values">
         <item>0</item>
         <item>1</item>
+    </string-array>
+    
+    <string-array name="notification_color_entries">
+        <item>Amber</item>
+        <item>Blue</item>
+        <item>Green</item>
+    </string-array>
+    
+    <string-array name="notification_color_values">
+        <item>#ffff0000</item>
+        <item>#ff0000ff</item>
+        <item>#ff00ff00</item>
     </string-array>
 
 </resources>
