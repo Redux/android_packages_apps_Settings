@@ -2937,6 +2937,9 @@ found in the list of installed applications.</string>
     <string name="title_toggle_media_play_pause">Media: Toggle Play/Pause</string>
     <string name="title_toggle_media_previous">Media: Skip to previous</string>
     <string name="title_toggle_media_next">Media: Skip to next</string>
+    <!-- Silent volume control -->
+    <string name="silent_control_title">Silent volume step</string>
+    <string name="silent_control_summary">Add a state for complete silence to volume control</string>
     <!-- Advanced sound settings -->
     <string name="adv_sound_settings">Advanced settings</string>
     <string name="sound_notifications_focus_title">Notification focus</string>
