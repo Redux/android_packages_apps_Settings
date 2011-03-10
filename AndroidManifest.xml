@@ -292,6 +292,13 @@
                 <category android:name="com.android.settings.SHORTCUT" />
             </intent-filter>
         </activity>
+        
+        <activity android:name="AdvSoundSettings"
+            android:label="@string/adv_sound_settings" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
 
         <activity android:name="DisplaySettings"
                 android:label="@string/display_settings"

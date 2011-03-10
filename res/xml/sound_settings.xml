@@ -108,5 +108,13 @@
             android:summary="@string/emergency_tone_summary"
             android:entries="@array/emergency_tone_entries"
             android:entryValues="@array/emergency_tone_values" />
+            
+    <PreferenceScreen
+            android:key="adv_sound_settings"
+            android:title="@string/adv_sound_settings" >
+            <intent android:action="action.intent.action.MAIN"
+                android:targetPackage="com.android.settings"
+                android:targetClass="com.android.settings.AdvSoundSettings" />
+    </PreferenceScreen>
 
 </PreferenceScreen>

@@ -55,6 +55,7 @@ public class SoundSettings extends PreferenceActivity implements
     private static final String KEY_EMERGENCY_TONE = "emergency_tone";
     private static final String KEY_SOUND_SETTINGS = "sound_settings";
     private static final String KEY_LOCK_SOUNDS = "lock_sounds";
+	private static final String KEY_ADVANCED = "adv_sound_settings";
 
     private static final String VALUE_VIBRATE_NEVER = "never";
     private static final String VALUE_VIBRATE_ALWAYS = "always";
@@ -75,6 +76,7 @@ public class SoundSettings extends PreferenceActivity implements
     private CheckBoxPreference mSoundEffects;
     private CheckBoxPreference mHapticFeedback;
     private CheckBoxPreference mLockSounds;
+	private PreferenceScreen mAdvanced;
 
     private AudioManager mAudioManager;
 
@@ -123,6 +125,8 @@ public class SoundSettings extends PreferenceActivity implements
         mLockSounds.setPersistent(false);
         mLockSounds.setChecked(Settings.System.getInt(resolver,
                 Settings.System.LOCKSCREEN_SOUNDS_ENABLED, 1) != 0);
+
+		mAdvanced = (PreferenceScreen) findPreference(KEY_ADVANCED);
 
         if (TelephonyManager.PHONE_TYPE_CDMA == activePhoneType) {
             ListPreference emergencyTonePreference =
@@ -287,7 +291,10 @@ public class SoundSettings extends PreferenceActivity implements
             Settings.System.putInt(getContentResolver(), Settings.System.LOCKSCREEN_SOUNDS_ENABLED,
                     mLockSounds.isChecked() ? 1 : 0);
 
-        }
+		} else if (preference == mAdvanced) {
+			startActivity(mAdvanced.getIntent());
+		}
+
         return true;
     }
 
