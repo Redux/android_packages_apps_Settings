@@ -123,9 +123,9 @@ public class WirelessSettings extends PreferenceActivity {
         }
 
         // Remove NFC if its not available
-        if (NfcAdapter.getDefaultAdapter() == null) {
+//        if (NfcAdapter.getDefaultAdapter() == null) {
             getPreferenceScreen().removePreference(nfc);
-        }
+//        }
 
         // Disable Tethering if it's not allowed
         ConnectivityManager cm =

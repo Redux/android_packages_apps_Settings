@@ -16,8 +16,6 @@
 
 package com.android.settings;
 
-import static android.provider.Settings.System.BATTERY_ICON_STYLE_OPTIONS;
-
 import java.util.ArrayList;
 
 import android.content.ContentResolver;
@@ -129,10 +127,9 @@ public class InterfaceSettings extends PreferenceActivity implements
 		if (BATTERY_TOGGLE.equals(key)) {
 			try {
 				int value = Integer.parseInt((String) objValue);
-				if (value >= 0 && value < BATTERY_ICON_STYLE_OPTIONS)
-					Settings.System.putInt(getContentResolver(),
-							Settings.System.BATTERY_ICON_STYLE,
-							value);
+				Settings.System.putInt(getContentResolver(),
+						Settings.System.BATTERY_ICON_STYLE,
+						value);
 			} catch (Exception e) {
 			   // do nothing here
 			}

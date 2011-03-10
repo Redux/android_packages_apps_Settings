@@ -42,7 +42,6 @@ class AccessPoint extends Preference {
     final String ssid;
     final int security;
     final int networkId;
-    final boolean adhoc;
 
     private WifiConfiguration mConfig;
     private int mRssi;
@@ -80,7 +79,6 @@ class AccessPoint extends Preference {
         networkId = config.networkId;
         mConfig = config;
         mRssi = Integer.MAX_VALUE;
-        adhoc = config.adhocSSID;
     }
 
     AccessPoint(Context context, ScanResult result) {
@@ -90,7 +88,6 @@ class AccessPoint extends Preference {
         security = getSecurity(result);
         networkId = -1;
         mRssi = result.level;
-        adhoc = result.capabilities.contains("[IBSS]");
     }
 
     @Override
