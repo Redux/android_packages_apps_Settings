@@ -176,6 +176,10 @@ public class CPUHelper {
 	}
 	
 	public static String defaultMinFreq() {
-		return minFreq();
+        String[] freqs = getAvailableFreqs();
+        if (freqs[0].equals("128000")) {
+            return freqs[1];
+        }
+		return freqs[0];
 	}
 }

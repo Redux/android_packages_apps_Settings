@@ -2887,6 +2887,8 @@ found in the list of installed applications.</string>
     <string name="cpu_settings">CPU settings</string>
     <string name="cpu_settings_title">CPU settings</string>
     
+    <string name="powersave">Powersave mode</string>
+    <string name="powersave_summary">Optimizes the hardware settings for best battery life</string>
     <string name="screenstate_scaling">Screenstate scaling</string>
     <string name="screenstate_scaling_summary">Lower CPU frequency when screen is turned off</string>
     <string name="available_governors">Available governors</string>

@@ -20,6 +20,7 @@ import java.util.ArrayList;
 
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
@@ -37,7 +38,11 @@ public class CPUSettings extends PreferenceActivity implements
 	Preference.OnPreferenceChangeListener {
 		
     private static final String TAG = "CPUSettings";
+        
+    private static final String INTENT_POWERSAVE_ON = "com.android.intent.POWERSAVE_ON";
+    private static final String INTENT_POWERSAVE_OFF = "com.android.intent.POWERSAVE_OFF";
 	
+    public static final String POWERSAVE = "powersave";
 	public static final String SCREENSTATE_SCALING = "screenstate_scaling";
 	public static final String GOVERNOR = "cpu_governor";
 	public static final String MIN_FREQ = "cpu_min_freq";
@@ -48,6 +53,7 @@ public class CPUSettings extends PreferenceActivity implements
 	private String MIN_FMT;
 	private String MAX_FMT;
 
+    private CheckBoxPreference mPowersave;
 	private CheckBoxPreference mScreenstateScaling;
 	private ListPreference mGovernor;
 	private ListPreference mMinFreq;
@@ -74,7 +80,9 @@ public class CPUSettings extends PreferenceActivity implements
 
         addPreferencesFromResource(R.xml.cpu_settings);
 		
+        mPowersave = (CheckBoxPreference)findPreference(POWERSAVE);
 		mScreenstateScaling = (CheckBoxPreference)findPreference(SCREENSTATE_SCALING);
+        mOnBoot = (CheckBoxPreference)findPreference(ON_BOOT);
 		
 		temp = CPUHelper.getCurrentGovernor();
 		mGovernor = (ListPreference)findPreference(GOVERNOR);
@@ -92,15 +100,16 @@ public class CPUSettings extends PreferenceActivity implements
 		mMinFreq.setSummary(String.format(MIN_FMT, MHerzed(temp)));
 		mMinFreq.setOnPreferenceChangeListener(this);
 		
-		temp = CPUHelper.getCurrentMaxFreq();
 		mMaxFreq = (ListPreference)findPreference(MAX_FREQ);
 		mMaxFreq.setEntryValues(FreqValues);
 		mMaxFreq.setEntries(Freqs);
-		mMaxFreq.setValue(temp);
-		mMaxFreq.setSummary(String.format(MAX_FMT, MHerzed(temp)));
+        if (!mOnBoot.isChecked()) {
+            mMaxFreq.setValue(CPUHelper.defaultMaxFreq());
+        }
+        mMaxFreq.setSummary(String.format(MAX_FMT, MHerzed(mMaxFreq.getValue())));
 		mMaxFreq.setOnPreferenceChangeListener(this);
-		
-		mOnBoot = (CheckBoxPreference)findPreference(ON_BOOT);
+        
+        powersaveChanged (!mPowersave.isChecked());
     }
 
     @Override
@@ -119,17 +128,21 @@ public class CPUSettings extends PreferenceActivity implements
 			public void run () {
 				String temp;
 						  
-				temp = CPUHelper.getCurrentMaxFreq();
-				mMaxFreq.setValue(temp);
-				mMaxFreq.setSummary(String.format(MAX_FMT, MHerzed(temp)));
+                if (!mPowersave.isChecked()) {
+                    temp = CPUHelper.getCurrentMaxFreq();
+                    mMaxFreq.setValue(temp);
+                    mMaxFreq.setSummary(String.format(MAX_FMT, MHerzed(temp)));
+                    temp = CPUHelper.getCurrentGovernor();
+                    mGovernor.setValue(temp);
+                    mGovernor.setSummary(String.format(GOV_FMT, temp));
+                } else {
+                    mMaxFreq.setSummary(String.format(MAX_FMT, MHerzed(mMaxFreq.getValue())));
+                    mGovernor.setSummary(String.format(GOV_FMT, mGovernor.getValue()));
+                }
 	
 				temp = CPUHelper.getCurrentMinFreq();
 				mMinFreq.setValue(temp);
 				mMinFreq.setSummary(String.format(MIN_FMT, MHerzed(temp)));
-						  
-				temp = CPUHelper.getCurrentGovernor();
-				mGovernor.setValue(temp);
-				mGovernor.setSummary(String.format(GOV_FMT, temp));
 			}
 		
 		}, 500);
@@ -137,13 +150,27 @@ public class CPUSettings extends PreferenceActivity implements
 	
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference == mPowersave) {
+            Context context = getApplicationContext();
+            if (mPowersave.isChecked()) {
+                Intent intent = new Intent (INTENT_POWERSAVE_ON, null);
+                context.sendBroadcast(intent, null);
+                
+                powersaveChanged(false);
+            } else {
+                Intent intent = new Intent (INTENT_POWERSAVE_OFF, null);
+                context.sendBroadcast(intent, null);
+                
+                powersaveChanged(true);
+            }
+        }
 		/**
 		 * Wait 0.5s until applying the new settings to CPUService
 		 */
 		final Handler hndl = new Handler();
 		hndl.postDelayed (new Runnable() {
 			public void run () {
-				CPUService.readSettings();
+				CPUService.updateSettings();
 			}
 		}, 500);
         return true;
@@ -172,7 +199,7 @@ public class CPUSettings extends PreferenceActivity implements
 			final Handler hndl = new Handler();
 			hndl.postDelayed (new Runnable() {
 				public void run () {
-					CPUService.readSettings();
+					CPUService.updateSettings();
 				}
 			}, 500);
 			return true;
@@ -188,4 +215,11 @@ public class CPUSettings extends PreferenceActivity implements
 		
 		return (temp + " MHz");
 	}
+        
+    private void powersaveChanged (boolean enabled) {
+        mScreenstateScaling.setEnabled(enabled);
+        mGovernor.setEnabled(enabled);
+        mMinFreq.setEnabled(enabled);
+        mMaxFreq.setEnabled(enabled);
+    }
 }
