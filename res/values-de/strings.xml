@@ -1162,4 +1162,46 @@
     <string name="sound_category_calls_title" msgid="3688531959256239012">"Eingehende Anrufe"</string>
     <string name="sound_category_notification_title" msgid="3502115998790286943">"Benachrichtigungen"</string>
     <string name="sound_category_feedback_title" msgid="4399742321363475393">"Feedback"</string>
+ <!-- Being Redux specific strings -->
+    
+    <!-- Interface settings -->
+    <string name="interface_settings">Oberflächen Einstellungen</string>
+    <string name="interface_settings_title">Oberfläche</string>
+    
+    <string name="statusbar_options">Statusbar Optionen</string>
+    <string name="battery_icon_style_title">Batteriesymbol</string>
+    
+    <string name="lockscreen_options">Lockscreen Optionen</string>
+    <string name="lockscreen_music_controls">Musikwerkzeuge auf dem Lockscreen</string>
+    <string name="lockscreen_always_music_controls">Musikwerkzeuge erscheint ständig auf dem Lockscreen</string>
+    <string name="lockscreen_always_music_controls_summary">Musikwerkzeuge </string>
+    <string name="trackball_wake_screen">Trackpad aufwachen</string>
+    <string name="trackball_wake_screen_summary">Bildschirm schaltet sich ein, wenn der optische Joystick gedrückt wird</string>
+    
+    <string name="notification_power_widget">Einstellungsleiste</string>
+    <string name="expanded_power_widget">Zusätzliche Einstellungsleiste</string>
+    <string name="expanded_power_widget_summary">Verwende die zusätzliche Einstellungsleiste</string>
+    <string name="expanded_hide_onchange">Verschwinde nach Änderung</string>
+    <string name="expanded_hide_onchange_summary">Lässt Einstellungsleiste nach drücken eines Widgets verschwinden</string>
+    <string name="power_picker">Widget Knöpfe</string>
+    <string name="power_picker_summary">Wähle deine Widgets</string>
+    
+    <!-- CPU settings -->
+    <string name="cpu_settings">CPU Einstellungen</string>
+    <string name="cpu_settings_title">CPU Einstellungen</string>
+    
+    <string name="powersave">Stromsparmodus</string>
+    <string name="powersave_summary">Verbessert die Hardwareeinstellungen für möglichst lange Akkudauer</string>
+    <string name="screenstate_scaling">Bildschirmstatus anpassen</string>
+    <string name="screenstate_scaling_summary">Niedrige CPU Frequenz bei abgeschaltetem Bildschirm</string>
+    <string name="available_governors">Vorhandene Regler</string>
+    <string name="cpu_governor">CPU Regler</string>
+    <string name="min_freq">Minimale Frequenz</string>
+    <string name="max_freq">Maximale Frequenz</string>
+    <string name="set_on_boot">Beim Aufstarten anwenden</string>
+    <string name="set_on_boot_summary">Wende Veränderungen erst beim nächsten Aufstarten an</string>
+    <!-- Formatted strings, used to set summaries in CPU settings -->
+    <string name="cpu_governors_list">Frequency scaling governor: %S</string>
+    <string name="cpu_min_freq">Minimale CPU Frequenz: %S</string>
+    <string name="cpu_max_freq">Maximale CPU Frequenz: %S</string>
 </resources>
