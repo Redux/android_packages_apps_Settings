@@ -30,6 +30,16 @@
                 android:summary="@string/auto_restore_summary"
                 android:persistent="false" />
     </PreferenceCategory>
+    
+    <PreferenceCategory
+            android:title="@string/anonymous_data">
+        <CheckBoxPreference
+                android:key="anonymous_data"
+                android:title="@string/send_anonymous_data"
+                android:summary="@string/send_anonymous_data_summary"
+                android:defaultValue="true"
+                android:persistent="true" />
+    </PreferenceCategory>
 
     <PreferenceCategory
             android:title="@string/personal_data_section_title">

@@ -19,9 +19,11 @@ package com.android.settings;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.backup.IBackupManager;
+import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
@@ -45,9 +47,14 @@ public class PrivacySettings extends PreferenceActivity implements
     private static final String GSETTINGS_PROVIDER = "com.google.settings";
     private static final String BACKUP_CATEGORY = "backup_category";
     private static final String BACKUP_DATA = "backup_data";
+    private static final String ANONYMOUS_DATA = "anonymous_data";
     private static final String AUTO_RESTORE = "auto_restore";
+    
+    private static final String PREF_NAME = "STATS";
+    
     private CheckBoxPreference mBackup;
     private CheckBoxPreference mAutoRestore;
+    private CheckBoxPreference mAnonymousData;
     private Dialog mConfirmDialog;
 
     private static final int DIALOG_ERASE_BACKUP = 2;
@@ -61,6 +68,7 @@ public class PrivacySettings extends PreferenceActivity implements
 
         mBackup = (CheckBoxPreference) screen.findPreference(BACKUP_DATA);
         mAutoRestore = (CheckBoxPreference) screen.findPreference(AUTO_RESTORE);
+        mAnonymousData = (CheckBoxPreference) screen.findPreference(ANONYMOUS_DATA);
 
         // Vendor specific
         if (getPackageManager().resolveContentProvider(GSETTINGS_PROVIDER, 0) == null) {
@@ -100,6 +108,12 @@ public class PrivacySettings extends PreferenceActivity implements
                     mAutoRestore.setChecked(!curState);
                 }
             }
+        } else if (preference == mAnonymousData) {
+            SharedPreferences settings = getSharedPreferences(PREF_NAME, 0);
+            SharedPreferences.Editor editor = settings.edit();
+            editor.putBoolean("send_data", mAnonymousData.isChecked());
+            editor.commit();
+            onAnonymousDataChanged(mAnonymousData.isChecked());
         }
 
         return false;
@@ -167,5 +181,15 @@ public class PrivacySettings extends PreferenceActivity implements
         }
         mBackup.setChecked(enable);
         mAutoRestore.setEnabled(enable);
+    }
+            
+    private void onAnonymousDataChanged (boolean enabled) {
+        if (!enabled) {
+            return;
+        }
+        
+        ComponentName cn = new ComponentName(getPackageName(),
+                        com.android.settings.stats.StatsService.class.getName());
+        startService(new Intent().setComponent(cn));
     }
 }

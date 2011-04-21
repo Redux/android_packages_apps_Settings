@@ -42,6 +42,9 @@
     <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.MOVE_PACKAGE" />
     <uses-permission android:name="com.android.phone.CHANGE_NETWORK_MODE" />
+    <!-- Redux additions -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application android:label="@string/settings_label"
             android:icon="@drawable/ic_launcher_settings"
@@ -917,5 +920,21 @@
             </intent-filter>
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/appwidget_info" />
         </receiver>
+        
+        <receiver android:name=".stats.StatsReceiver"
+                android:label="StatsReceiver"
+                android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.ACTION_SHUTDOWN" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+        
+        <service android:name=".stats.StatsService"
+                android:label="StatsService"
+                android:enabled="true" >
+        </service>
+        
     </application>
 </manifest>

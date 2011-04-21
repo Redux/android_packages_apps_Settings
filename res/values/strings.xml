@@ -2998,5 +2998,10 @@ found in the list of installed applications.</string>
 
     <string name="soundtone_title">Notification tone</string>
     <string name="soundtone_summary">""</string>
+    
+    <!-- Privacy settings -->
+    <string name="anonymous_data">Anonymous data</string>
+    <string name="send_anonymous_data">Send anonymous data</string>
+    <string name="send_anonymous_data_summary">Send anonymous data which does not compromise sensible information to Redux servers to track unique installations</string>
     <!-- End Redux specific strings -->
 </resources>
