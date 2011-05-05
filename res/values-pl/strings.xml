@@ -1161,4 +1161,149 @@
     <string name="sound_category_calls_title" msgid="3688531959256239012">"Połączenia przychodzące"</string>
     <string name="sound_category_notification_title" msgid="3502115998790286943">"Powiadomienia"</string>
     <string name="sound_category_feedback_title" msgid="4399742321363475393">"Reakcje"</string>
+ <!-- Being Redux specific strings -->
+    
+    <!-- Interface settings -->
+    <string name="interface_settings">Interfejs</string>
+    <string name="interface_settings_title">Ustawienia interfejsu</string>
+    
+    <string name="statusbar_options">Dostosowanie paska stanu</string>
+    <string name="battery_icon_style_title">Ikona baterii</string>
+    
+    <string name="lockscreen_options">Blokowanie ekranu</string>
+    <string name="lockscreen_music_controls">Kontrola muzyki</string>
+    <string name="lockscreen_always_music_controls">Zawsze wyświetlaj kontroler</string>
+    <string name="lockscreen_always_music_controls_summary">Wyświetl kontroler muzyki na dole ekranu</string>
+    <string name="trackball_wake_screen">Budzenie trackpadem</string>
+    <string name="trackball_wake_screen_summary">Naciśnięcie trackpada budzi urządzenie</string>
+    
+    <string name="notification_power_widget">PowerWidget</string>
+    <string name="expanded_power_widget">Pasek widgetu PowerWidget</string>
+    <string name="expanded_power_widget_summary">Użyj zaawansowanego widżetu</string>
+    <string name="expanded_hide_onchange">Ukryj po zmianie</string>
+    <string name="expanded_hide_onchange_summary">Ukryj pasek powiadomień po przełączeniu przycisku</string>
+    <string name="power_picker">Przyciski widgetu</string>
+    <string name="power_picker_summary">Wybierz przyciski widgetu</string>
+    
+    <!-- CPU settings -->
+    <string name="cpu_settings">Ustawienia CPU</string>
+    <string name="cpu_settings_title">Ustawienia CPU</string>
+    
+    <string name="powersave">Tryb oszczędny</string>
+    <string name="powersave_summary">Optymalne ustawienia wydłużające czas pracy na baterii</string>
+    <string name="screenstate_scaling">Screenstate scaling</string>
+    <string name="screenstate_scaling_summary">Obiżanie zegara CPU gdy ekran jest wyłączony</string>
+    <string name="available_governors">Aviable governors</string>
+    <string name="cpu_governor">Governor</string>
+    <string name="min_freq">Minimalna częstotliwość</string>
+    <string name="max_freq">Maksymalna częstotliwość</string>
+    <string name="set_on_boot">Ustaw przy starcie</string>
+    <string name="set_on_boot_summary">Ustawienia zostaną zastosowane przy starcie systemu</string>
+    <!-- Formatted strings, used to set summaries in CPU settings -->
+    <string name="cpu_governors_list">Obecnie używany governor: %S</string>
+    <string name="cpu_min_freq">Minimalna częstotliwość zegara: %S</string>
+    <string name="cpu_max_freq">maksymalna częstotliwość zegara: %S</string>
+ 
+    <!-- Power picker -->
+    <string name="title_widget_buttons">Przyciski widgetu</string>
+    <string name="title_toggle_wifi">Wifi</string>
+    <string name="title_toggle_bluetooth">Bluetooth</string>
+    <string name="title_toggle_gps">GPS</string>
+    <string name="title_toggle_sound">Dźwięk</string>
+    <string name="title_toggle_brightness">Jasność ekranu</string>
+    <string name="title_toggle_sync">Synchronizacja</string>
+    <string name="title_toggle_wifiap">Tether WiFi</string>
+    <string name="title_toggle_screentimeout">Czas podświetlania ekranu</string>
+    <string name="title_toggle_mobiledata">Transmisja danych</string>
+    <string name="title_toggle_lockscreen">Ekran blokady</string>
+    <string name="title_toggle_networkmode">Przełącz 2G/3G</string>
+    <string name="title_toggle_autorotate">Orientacja</string>
+    <string name="title_toggle_airplane">Tryb samolotowy</string>
+    <string name="title_toggle_flashlight">Latarka LED</string>
+    <string name="title_toggle_sleep">Uśpij</string>
+    <string name="title_button_modes">Tryby przycisków</string>
+    <string name="pref_brightness_mode_title">Tryby jasności</string>
+    <string name="pref_brightness_mode_summary">Wybierz jak przycisk jasności zmienia tryby</string>
+    <string name="pref_network_mode_title">Tryby sieci</string>
+    <string name="pref_network_mode_summary">Wybierz jak przycisk sieci zmienia tryby</string>
+    <string name="pref_screentimeout_mode_title">Tryby blokady ekranu</string>
+    <string name="pref_screentimeout_mode_summary">Wybierz jak przycisk blokowania ekranu zmienia tryby</string>
+    <string name="pref_ring_mode_title">Przycisk dźwięku</string>
+    <string name="pref_ring_mode_summary">Wybierz jak przycisk dźwięku zmienia tryby</string>
+    <string name="pref_flash_mode_title">Tryb latarki LED</string>
+    <string name="pref_flash_mode_summary">Silny/Promień Smierci(Evo)</string>
+    <string name="widget_max_buttons">Maksymalnie 6 przycisków.</string>    
+    
+    <!-- Power picker v2 -->
+    <string name="title_widget_order">Kolejność przycisków widgetu</string>
+    <string name="summary_widget_order">Wybierz preferowaną kolejność przycisków</string>
+    <string name="title_buttons">Przyciski</string>
+    <string name="title_toggle_media_play_pause">Odtwarzanie: Play/Pause</string>
+    <string name="title_toggle_media_previous">Odtwarzanie: Poprzedni</string>
+    <string name="title_toggle_media_next">Odtwarzanie: Następny</string>
+    <!-- Silent volume control -->
+    <string name="silent_control_title">Tryb milczący</string>
+    <string name="silent_control_summary">Dodaj tryb całkowitego wyciszenia do kontroli głośności</string>
+    <!-- Advanced sound settings -->
+    <string name="adv_sound_settings">Ustawienia zaawansowane</string>
+    <string name="sound_notifications_focus_title">Priorytet powiadomień</string>
+    <string name="sound_notifications_focus_summary">Powoduje wyciszenie innych dźwięków podczas odgrywania dźwięków powiadomienia</string>
+    <string name="sound_to_speaker_title">Dźwięk zawsze z głośnika</string>
+    <string name="sound_notifications_title">Powiadomienia</string>
+    <string name="sound_rings_title">Dźwięki dzwonka</string>
+    <string name="sound_alarms_title">Alarmy</string>
+    <string name="sound_note_title">Uwaga</string>
+    <string name="sound_note_summary">Poniższe ustawienia są aktywne tylko przy podłączonych słuchawkach.</string>
+    <string name="sound_attenuation_title">Przyciszenie ustawionej głośności</string>
+    <string name="sound_limitvol_title">Głośność podczas odtwarzania muzyki</string>
+    <string name="sound_notifications_attenuation_dialog">Przyciszenie powiadomień</string>
+    <string name="sound_rings_attenuation_dialog">Przyciszenie dzwonka</string>
+    <string name="sound_alarms_attenuation_dialog">Przyciszenie alarmu</string>
+    <string name="sound_notifications_limitvol_dialog">Głośnośc powiadomień</string>
+    <string name="sound_rings_limitvol_dialog">Głośność dzwonka</string>
+    <string name="sound_alarms_limitvol_dialog">Głośność alarmu</string>
+    
+    <!-- Profile Settings screen -->
+    <string name="profile_settings_title">Profile</string>
+    <string name="profile_title">Ustaw profile</string>
+    <string name="profile_appgroup_list_title">Ustaw grupy aplikacji</string>
+    <string name="sound_mode">Powiadomienie</string>
+    <string name="ringer_mode">Dzwonek</string>
+    <string name="lights_mode">Światła</string>
+    <string name="vibrate_mode">Wibracje</string>
+    <string name="choose_soundtone">Wybierz dźwięk powiadomienia</string>
+    <string name="choose_ringtone">Wybierz dźwięk dzwonka</string>
+    <string name="profile_settings">Ustawienia profilu</string>
+    <string name="profile_name">Nazwa profilu</string>
+    <string name="profile_summary">Dotkinj aby skonfigurować profil</string>
+    <string name="profile_appgroup_title">Grupa aplikacji: %s</string>
+    <string name="profile_appgroups_title">Grupy aplikacji</string>
+    <string name="profile_applist_title">Aplikacje- kliknij nazwę żeby usunąc z grupy</string>
+    <string name="profile_appgroup_name_prompt">Podaj nazwę grupy</string>
+    <string name="profile_delete">Usuń profil</string>
+    <string name="profile_delete_confirm">Czy na pewno usunąć ten profil</string>
+    <string name="profile_app_delete_confirm">Czy na pewno usunąć tą aplikację</string>
+    <string name="profile_choose_app">Wybierz aplikację</string>
+    <string name="profile_settings_header">Ustawienia profilu: %s</string>
+    <string name="profile_group_header">Profil: %1$s category: %2$s</string>
+    <string name="menu_appgroups">Zarządzaj grupami aplikacji</string>
+    <string name="menu_new_profile">Nowy profil</string>
+    <string name="menu_new_profile_summary">Dodaj i skonfiguruj nowy profil</string>
+    <string name="profile_menu_delete">Usuń</string>
+    <string name="profile_cannot_delete">Nie można usunąć aktywnego profilu.</string>
+    <string name="profile_new_appgroup">Grupa aplikacji</string>
+    <string name="profile_delete_appgroup">Usuń tą grupę aplikacji</string>
+    <string name="profile_add_app">Dodaj aplikację</string>
+    <string name="profile_manage">Zarządzaj profilami</string>
+    <string name="profile_appgroups_manage">Zarządzaj grupami aplikacji</string>
+    <string name="profile_applist_manage">Zarządzaj listą aplikacji</string>
+
+    <string name="soundtone_title">Dźwięk powiadomienia</string>
+    <string name="soundtone_summary">""</string>
+    
+    <!-- Privacy settings -->
+    <string name="anonymous_data">Anonimowe statystyki</string>
+    <string name="send_anonymous_data">Wysyłanie anonimowych statystyk</string>
+    <string name="send_anonymous_data_summary">Wyślij anonimowe dane nie zawierających informacji prywatnych do serwerów Reduxa w celu odnotowania instalacji</string>
+    <!-- End Redux specific strings -->
 </resources>
