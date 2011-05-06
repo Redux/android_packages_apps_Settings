@@ -1164,14 +1164,14 @@
  <!-- Being Redux specific strings -->
     
     <!-- Interface settings -->
-    <string name="interface_settings">Interfejs</string>
-    <string name="interface_settings_title">Ustawienia interfejsu</string>
+    <string name="interface_settings">Ustawienia nterfejsu</string>
+    <string name="interface_settings_title">Interfejs</string>
     
     <string name="statusbar_options">Dostosowanie paska stanu</string>
     <string name="battery_icon_style_title">Ikona baterii</string>
     
-    <string name="lockscreen_options">Blokowanie ekranu</string>
-    <string name="lockscreen_music_controls">Kontrola muzyki</string>
+    <string name="lockscreen_options">Blokada ekranu</string>
+    <string name="lockscreen_music_controls">Kontroler muzyki</string>
     <string name="lockscreen_always_music_controls">Zawsze wyświetlaj kontroler</string>
     <string name="lockscreen_always_music_controls_summary">Wyświetl kontroler muzyki na dole ekranu</string>
     <string name="trackball_wake_screen">Budzenie trackpadem</string>
@@ -1181,7 +1181,7 @@
     <string name="expanded_power_widget">Pasek widgetu PowerWidget</string>
     <string name="expanded_power_widget_summary">Użyj zaawansowanego widżetu</string>
     <string name="expanded_hide_onchange">Ukryj po zmianie</string>
-    <string name="expanded_hide_onchange_summary">Ukryj pasek powiadomień po przełączeniu przycisku</string>
+    <string name="expanded_hide_onchange_summary">Ukryj pasek powiadomień po przełączeniu</string>
     <string name="power_picker">Przyciski widgetu</string>
     <string name="power_picker_summary">Wybierz przyciski widgetu</string>
     
@@ -1212,8 +1212,8 @@
     <string name="title_toggle_sound">Dźwięk</string>
     <string name="title_toggle_brightness">Jasność ekranu</string>
     <string name="title_toggle_sync">Synchronizacja</string>
-    <string name="title_toggle_wifiap">Tether WiFi</string>
-    <string name="title_toggle_screentimeout">Czas podświetlania ekranu</string>
+    <string name="title_toggle_wifiap">WiFi AP</string>
+    <string name="title_toggle_screentimeout">Czas podświetlania</string>
     <string name="title_toggle_mobiledata">Transmisja danych</string>
     <string name="title_toggle_lockscreen">Ekran blokady</string>
     <string name="title_toggle_networkmode">Przełącz 2G/3G</string>
@@ -1226,8 +1226,8 @@
     <string name="pref_brightness_mode_summary">Wybierz jak przycisk jasności zmienia tryby</string>
     <string name="pref_network_mode_title">Tryby sieci</string>
     <string name="pref_network_mode_summary">Wybierz jak przycisk sieci zmienia tryby</string>
-    <string name="pref_screentimeout_mode_title">Tryby blokady ekranu</string>
-    <string name="pref_screentimeout_mode_summary">Wybierz jak przycisk blokowania ekranu zmienia tryby</string>
+    <string name="pref_screentimeout_mode_title">Tryby czasu podświetlenia</string>
+    <string name="pref_screentimeout_mode_summary">Wybierz jak przycisk czasu podświetlenia zmienia tryby</string>
     <string name="pref_ring_mode_title">Przycisk dźwięku</string>
     <string name="pref_ring_mode_summary">Wybierz jak przycisk dźwięku zmienia tryby</string>
     <string name="pref_flash_mode_title">Tryb latarki LED</string>
