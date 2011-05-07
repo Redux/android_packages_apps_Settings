@@ -1173,7 +1173,7 @@
     <string name="lockscreen_options">Blokada ekranu</string>
     <string name="lockscreen_music_controls">Kontroler muzyki</string>
     <string name="lockscreen_always_music_controls">Zawsze wyświetlaj kontroler</string>
-    <string name="lockscreen_always_music_controls_summary">Wyświetl kontroler muzyki na dole ekranu</string>
+    <string name="lockscreen_always_music_controls_summary">Wyświetl kontroler muzyki na dole ekranu blokowania</string>
     <string name="trackball_wake_screen">Budzenie trackpadem</string>
     <string name="trackball_wake_screen_summary">Naciśnięcie trackpada budzi urządzenie</string>
     
@@ -1192,8 +1192,8 @@
     <string name="powersave">Tryb oszczędny</string>
     <string name="powersave_summary">Optymalne ustawienia wydłużające czas pracy na baterii</string>
     <string name="screenstate_scaling">Screenstate scaling</string>
-    <string name="screenstate_scaling_summary">Obiżanie zegara CPU gdy ekran jest wyłączony</string>
-    <string name="available_governors">Aviable governors</string>
+    <string name="screenstate_scaling_summary">Obniża zegar CPU gdy ekran jest wyłączony</string>
+    <string name="available_governors">Dostępne kontrolery</string>
     <string name="cpu_governor">Governor</string>
     <string name="min_freq">Minimalna częstotliwość</string>
     <string name="max_freq">Maksymalna częstotliwość</string>
@@ -1201,8 +1201,8 @@
     <string name="set_on_boot_summary">Ustawienia zostaną zastosowane przy starcie systemu</string>
     <!-- Formatted strings, used to set summaries in CPU settings -->
     <string name="cpu_governors_list">Obecnie używany governor: %S</string>
-    <string name="cpu_min_freq">Minimalna częstotliwość zegara: %S</string>
-    <string name="cpu_max_freq">maksymalna częstotliwość zegara: %S</string>
+    <string name="cpu_min_freq">Minimalna częstotliwość: %S</string>
+    <string name="cpu_max_freq">Maksymalna częstotliwość: %S</string>
  
     <!-- Power picker -->
     <string name="title_widget_buttons">Przyciski widgetu</string>
@@ -1212,7 +1212,7 @@
     <string name="title_toggle_sound">Dźwięk</string>
     <string name="title_toggle_brightness">Jasność ekranu</string>
     <string name="title_toggle_sync">Synchronizacja</string>
-    <string name="title_toggle_wifiap">WiFi AP</string>
+    <string name="title_toggle_wifiap">Wifi AP</string>
     <string name="title_toggle_screentimeout">Czas podświetlania</string>
     <string name="title_toggle_mobiledata">Transmisja danych</string>
     <string name="title_toggle_lockscreen">Ekran blokady</string>
@@ -1231,7 +1231,7 @@
     <string name="pref_ring_mode_title">Przycisk dźwięku</string>
     <string name="pref_ring_mode_summary">Wybierz jak przycisk dźwięku zmienia tryby</string>
     <string name="pref_flash_mode_title">Tryb latarki LED</string>
-    <string name="pref_flash_mode_summary">Silny/Promień Smierci(Evo)</string>
+    <string name="pref_flash_mode_summary">Silny/Promień Śmierci(Evo)</string>
     <string name="widget_max_buttons">Maksymalnie 6 przycisków.</string>    
     
     <!-- Power picker v2 -->
