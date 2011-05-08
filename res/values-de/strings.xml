@@ -1162,28 +1162,39 @@
     <string name="sound_category_calls_title" msgid="3688531959256239012">"Eingehende Anrufe"</string>
     <string name="sound_category_notification_title" msgid="3502115998790286943">"Benachrichtigungen"</string>
     <string name="sound_category_feedback_title" msgid="4399742321363475393">"Feedback"</string>
- <!-- Being Redux specific strings -->
+     <!-- Being Redux specific strings -->
+    <!-- Display settings -->
+    <string name="notification_color_title">Benachrichtigungsfarbe</string>
+    <string name="notification_color_summary">Ändere die Farbe des BenachrichtigungsLED</string>
+    <string name="notification_pulse_title">LED blinkt</string>
+    <string name="notification_pulse_summary">BenachrichtigungsLED blinkt pulsierend</string>
+    <string name="notification_blink_title">LED blinken</string>
+    <string name="notification_blink_summary">Lass das BenachrichtigungsLED wiederholend blinken</string>
+    <string name="notification_always_on_title">LED immer an</string>
+    <string name="notification_always_on_summary">BenachrichtigungsLED ist ebenfalls aktiviert wenn Bildschrim an</string>
+    <string name="notification_charging_title">Ladelicht</string>
+    <string name="notification_charging_summary">Aktiviere das orange LED beim Laden</string>
     
     <!-- Interface settings -->
-    <string name="interface_settings">Oberflächen Einstellungen</string>
-    <string name="interface_settings_title">Oberfläche</string>
+    <string name="interface_settings">Benutzeroberfläche Einstellungen</string>
+    <string name="interface_settings_title">Benutzeroberfläche</string>
     
     <string name="statusbar_options">Statusbar Optionen</string>
     <string name="battery_icon_style_title">Batteriesymbol</string>
     
     <string name="lockscreen_options">Lockscreen Optionen</string>
-    <string name="lockscreen_music_controls">Musikwerkzeuge auf dem Lockscreen</string>
-    <string name="lockscreen_always_music_controls">Musikwerkzeuge erscheint ständig auf dem Lockscreen</string>
-    <string name="lockscreen_always_music_controls_summary">Musikwerkzeuge </string>
+    <string name="lockscreen_music_controls">Zeige Musiksteuerung</string>
+    <string name="lockscreen_always_music_controls">Musiksteurung</string>
+    <string name="lockscreen_always_music_controls_summary">Musiksteuerung erscheint permament auf dem Lockscreen</string>
     <string name="trackball_wake_screen">Trackpad aufwachen</string>
     <string name="trackball_wake_screen_summary">Bildschirm schaltet sich ein, wenn der optische Joystick gedrückt wird</string>
     
     <string name="notification_power_widget">Einstellungsleiste</string>
-    <string name="expanded_power_widget">Zusätzliche Einstellungsleiste</string>
+    <string name="expanded_power_widget">Einstellungsleiste</string>
     <string name="expanded_power_widget_summary">Verwende die zusätzliche Einstellungsleiste</string>
-    <string name="expanded_hide_onchange">Verschwinde nach Änderung</string>
-    <string name="expanded_hide_onchange_summary">Lässt Einstellungsleiste nach drücken eines Widgets verschwinden</string>
-    <string name="power_picker">Widget Knöpfe</string>
+    <string name="expanded_hide_onchange">Verschwinde</string>
+    <string name="expanded_hide_onchange_summary">Lässt Einstellungsleiste nach dem Drücken eines Widgets verschwinden</string>
+    <string name="power_picker">Widgets</string>
     <string name="power_picker_summary">Wähle deine Widgets</string>
     
     <!-- CPU settings -->
@@ -1191,17 +1202,115 @@
     <string name="cpu_settings_title">CPU Einstellungen</string>
     
     <string name="powersave">Stromsparmodus</string>
-    <string name="powersave_summary">Verbessert die Hardwareeinstellungen für möglichst lange Akkudauer</string>
+    <string name="powersave_summary">Verbessert die Hardwareeinstellungen für eine möglichst lange Akkudauer</string>
     <string name="screenstate_scaling">Bildschirmstatus anpassen</string>
     <string name="screenstate_scaling_summary">Niedrige CPU Frequenz bei abgeschaltetem Bildschirm</string>
     <string name="available_governors">Vorhandene Regler</string>
     <string name="cpu_governor">CPU Regler</string>
     <string name="min_freq">Minimale Frequenz</string>
     <string name="max_freq">Maximale Frequenz</string>
-    <string name="set_on_boot">Beim Aufstarten anwenden</string>
-    <string name="set_on_boot_summary">Wende Veränderungen erst beim nächsten Aufstarten an</string>
+    <string name="set_on_boot">Übernehmen</string>
+    <string name="set_on_boot_summary">Übernehme Veränderungen erst beim nächsten Neustart</string>
     <!-- Formatted strings, used to set summaries in CPU settings -->
-    <string name="cpu_governors_list">Frequency scaling governor: %S</string>
+    <string name="cpu_governors_list">Frequenzanpassungsregler: %S</string>
     <string name="cpu_min_freq">Minimale CPU Frequenz: %S</string>
     <string name="cpu_max_freq">Maximale CPU Frequenz: %S</string>
+ 
+    <!-- Power picker -->
+    <string name="title_widget_buttons">Erweiterte Widget Ansicht</string>
+    <string name="title_toggle_wifi">Wifi</string>
+    <string name="title_toggle_bluetooth">Bluetooth</string>
+    <string name="title_toggle_gps">GPS</string>
+    <string name="title_toggle_sound">Soundregler</string>
+    <string name="title_toggle_brightness">Helligkeitstaste</string>
+    <string name="title_toggle_sync">Synchronisieren</string>
+    <string name="title_toggle_wifiap">Wifi AP</string>
+    <string name="title_toggle_screentimeout">Bildschirmaus</string>
+    <string name="title_toggle_mobiledata">Mobiles Netz</string>
+    <string name="title_toggle_lockscreen">Bidlschirmsperre</string>
+    <string name="title_toggle_networkmode">2G/3G umschalten</string>
+    <string name="title_toggle_autorotate">Orientierung</string>
+    <string name="title_toggle_airplane">Flugzeugmodus</string>
+    <string name="title_toggle_flashlight">LED Taschenlampe</string>
+    <string name="title_toggle_sleep">_Bildschirm aus</string>
+    <string name="title_button_modes">Zusätzliche Einstellungen</string>
+    <string name="pref_brightness_mode_title">Helligkeit</string>
+    <string name="pref_brightness_mode_summary">Wähle die Einstellungen für die Helligkeitstaste</string>
+    <string name="pref_network_mode_title">Netzwerk</string>
+    <string name="pref_network_mode_summary">Wähle die Einstellungen für die Netwerktaste</string>
+    <string name="pref_screentimeout_mode_title">Bildschirmaus</string>
+    <string name="pref_screentimeout_mode_summary">Wähle die Einstellungen für die Bildschirmaustaste</string>
+    <string name="pref_ring_mode_title">Sound</string>
+    <string name="pref_ring_mode_summary">Wähle die Einstellungen für die Soundtaste</string>
+    <string name="pref_flash_mode_title">Taschenlampe</string>
+    <string name="pref_flash_mode_summary">Wähle hohe Helligkeit</string>
+    <string name="widget_max_buttons">6 ist die maximale Anzahl Widgets</string>
+    
+    <!-- Power picker v2 -->
+    <string name="title_widget_order">Widget Reihenfolge</string>
+    <string name="summary_widget_order">Ordne deine Widgets</string>
+    <string name="title_buttons">Tasten</string>
+    <string name="title_toggle_media_play_pause">Musik: Spielen / Pause</string>
+    <string name="title_toggle_media_previous">Musik: vorheriges Stück</string>
+    <string name="title_toggle_media_next">Musik: nächstes Stück</string>
+    <!-- Silent volume control -->
+    <string name="silent_control_title">Lautlosschritt</string>
+    <string name="silent_control_summary">Mit den Volumentasten kann ein Lautlosmodus eingestellt werden</string>
+    <!-- Advanced sound settings -->
+    <string name="adv_sound_settings">Erweiterte Einstellungen</string>
+    <string name="sound_notifications_focus_title">Fokussiere Benachrichtigung</string>
+    <string name="sound_notifications_focus_summary">Kompatible Anwendungen leiser machen, wenn Benachrichtigungen abgespielt werden.</string>
+    <string name="sound_to_speaker_title">Immer über Lautsprecher abspielen</string>
+    <string name="sound_notifications_title">Benachrichtigungen</string>
+    <string name="sound_rings_title">Klingeltöne</string>
+    <string name="sound_alarms_title">Alarm>
+    <string name="sound_note_title">Erinnerungen</string>
+    <string name="sound_note_summary">Nachfolgende Einstellungen werden nur angewendet, wenn Kopfhörer eingesteckt sind.</string>
+    <string name="sound_attenuation_title">Reduzierung der eingestellten Lautstärke</string>
+    <string name="sound_limitvol_title">Volumen wenn Musik spielt</string>
+    <string name="sound_notifications_attenuation_dialog">Benachrichtigungsreduzierung</string>
+    <string name="sound_rings_attenuation_dialog">Klingeltonreduzierung</string>
+    <string name="sound_alarms_attenuation_dialog">Alarmreduzierung</string>
+    <string name="sound_notifications_limitvol_dialog">Benachrichtigungslautstärke/string>
+    <string name="sound_rings_limitvol_dialog">Klingeltonlautstärke</string>
+    <string name="sound_alarms_limitvol_dialog">Alarmlautstärke</string>
+    
+    <!-- Profile Settings screen -->
+    <string name="profile_settings_title">Profile</string>
+    <string name="profile_title">Verändere Profile</string>
+    <string name="profile_appgroup_list_title">Erstelle Anwendungsgruppen</string>
+    <string name="sound_mode">Benachrichtigungsmodus</string>
+    <string name="ringer_mode">Klingelmodus</string>
+    <string name="lights_mode">Lichtmodus</string>
+    <string name="vibrate_mode">Vibrationsmodus</string>
+    <string name="choose_soundtone">Wähle Benachrichtigungston</string>
+    <string name="choose_ringtone">Wähle Klingelton</string>
+    <string name="profile_settings">Profileinstellungen</string>
+    <string name="profile_name">Profilename</string>
+    <string name="profile_summary">Tippe um Profile zu ändern</string>
+    <string name="profile_appgroup_title">Anwendungsgruppe: %s</string>
+    <string name="profile_appgroups_title">Anwendungsgruppen</string>
+    <string name="profile_applist_title">Anwendungen - klicke, um von Gruppe zu entfernen</string>
+    <string name="profile_appgroup_name_prompt">Gib einen Namen für die Gruppe ein</string>
+    <string name="profile_delete">Lösche das Profil</string>
+    <string name="profile_delete_confirm">Bist du sicher, dass du das Profil löschen möchtest?</string>
+    <string name="profile_app_delete_confirm">Bist du sicher, dass du diese Anwendung entfernen möchtest?</string>
+    <string name="profile_choose_app">Wähle eine Anwendung</string>
+    <string name="profile_settings_header">Profileinstellungen: %s</string>
+    <string name="profile_group_header">Profil: %1$s Kategorie: %2$s</string>
+    <string name="menu_appgroups">Verwalte app Gruppen</string>
+    <string name="menu_new_profile">Neues Profil</string>
+    <string name="menu_new_profile_summary">Erstelle ein neues Profil</string>
+    <string name="profile_menu_delete">Löschen</string>
+    <string name="profile_cannot_delete">Du kannst das aktive Profil nicht löschen.</string>
+    <string name="profile_new_appgroup">Neue Anwendungsgruppe</string>
+    <string name="profile_delete_appgroup">Lösche diese Anwendungsgruppe</string>
+    <string name="profile_add_app">Anwendung hinzufügen</string>
+    <string name="profile_manage">Verwalte Profile</string>
+    <string name="profile_appgroups_manage">Verwalte Anwendungsgruppen</string>
+    <string name="profile_applist_manage">Verwalte Anwendungsliste</string>
+ 
+    <string name="soundtone_title">Benachrichtigungston</string>
+    <string name="soundtone_summary">""</string>
+    <!-- End Redux specific strings -->
 </resources>
