@@ -1210,7 +1210,7 @@
     <string name="min_freq">Minimale Frequenz</string>
     <string name="max_freq">Maximale Frequenz</string>
     <string name="set_on_boot">Übernehmen</string>
-    <string name="set_on_boot_summary">Übernehme Veränderungen erst beim nächsten Neustart</string>
+    <string name="set_on_boot_summary">Einstellungen auch nach Neustart anwenden</string>
     <!-- Formatted strings, used to set summaries in CPU settings -->
     <string name="cpu_governors_list">Frequenzanpassungsregler: %S</string>
     <string name="cpu_min_freq">Minimale CPU Frequenz: %S</string>
